@@ -12,4 +12,4 @@
     typeDB = sqlite3 - тип базы данных
 
 Если на машине, где установлен пакет, задать адрес доступный для других машин и указать открытый dns порт, а на другом машине указать адрес машины с запущенной программой, то возможно обрабатывать dns сообщения. Демонстрация:
-![alt text](https://github.com/eaxr/zresolver/blob/master/zResolver.gif?raw=true)
+![alt text](https://github.com/eaxr/zresolver/blob/master/zResolver_1.gif?raw=true)
