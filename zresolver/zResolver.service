@@ -1,0 +1,17 @@
+[Unit]
+Description=zResolver service
+After=network.target
+
+[Service]
+User=root
+WorkingDirectory=/usr/lib/zresolver
+Type=simple
+Restart=always
+RestartSec=1
+
+ExecStart=/usr/bin/python3 /usr/lib/zresolver/lib/python/zresolver/zresolver.py /etc/zresolver/resolver.conf
+ExecReload=/bin/kill -s HUP $MAINPID
+ExecStop=/bin/kill -s TERM $MAINPID
+
+[Install]
+WantedBy=multi-user.target
