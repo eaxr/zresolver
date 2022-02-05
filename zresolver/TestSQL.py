@@ -251,8 +251,8 @@ class TestSQL:
             finally:
                 if (connection):
                     connection.close()
-                toLog = "Таблица TTL обновлена для строки {}. Новое значение = {}".format(row, ttl)
-                Settings().createLogEntry(toLog)
+                #toLog = "Таблица TTL обновлена для строки {}. Новое значение = {}".format(row, ttl)
+                #Settings().createLogEntry(toLog)
             
     def updateTTLipv6(self, ttl, row):
         connection = self.createConnection()
@@ -273,8 +273,8 @@ class TestSQL:
             finally:
                 if (connection):
                     connection.close()
-                toLog = "Таблица TTL обновлена для строки {}. Новое значение = {}".format(row, ttl)
-                Settings().createLogEntry(toLog)
+                #toLog = "Таблица TTL обновлена для строки {}. Новое значение = {}".format(row, ttl)
+                #Settings().createLogEntry(toLog)
     
     def deleteRowIPv4(self, hostname):
         connection = self.createConnection()
@@ -293,8 +293,8 @@ class TestSQL:
             finally:
                 if (connection):
                     connection.close()
-                toLog = "Строка удалена для значения имени {}.".format(hostname)
-                Settings().createLogEntry(toLog)
+                #toLog = "Строка удалена для значения имени {}.".format(hostname)
+                #Settings().createLogEntry(toLog)
     
     def deleteRowIPv6(self, hostname):
         connection = self.createConnection()
@@ -313,8 +313,8 @@ class TestSQL:
             finally:
                 if (connection):
                     connection.close()
-                toLog = "Строка удалена для значения имени {}.".format(hostname)
-                Settings().createLogEntry(toLog)
+                #toLog = "Строка удалена для значения имени {}.".format(hostname)
+                #Settings().createLogEntry(toLog)
     
     def getCountIPv4(self):
         connection = self.createConnection()
