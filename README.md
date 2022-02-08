@@ -11,5 +11,17 @@
     nameDB = test_resolver.db - название базы данных, хранится по пути /usr/lib/zresolver
     typeDB = sqlite3 - тип базы данных
 
+Это модель для обучения, в ней преобразования выполняются из байткода в hex код и обратно. Поэтому многие преобразования выполняются по несколько раз. Пример, как обрабатывается сообщение:
+![alt text](https://github.com/eaxr/zresolver/blob/master/images/resolver4.png?raw=true)
+
+После того как сообщение обработано и есть ифнормация для отправки ответа, формируется сообщение для отправки. Формирование заголовка:
+![alt text](https://github.com/eaxr/zresolver/blob/master/images/resolver5.png?raw=true)
+
+Если в базе данных программы нет запрашиваемого доменного имени, то она обращается к вышестоящему dns и результат сохраняет в базе данных. Поэтому, когда есть запрос иммени, который есть в базе данных, то программа отправляет его сразу. Программа периодически обращается к базе, чтобы изменять значение TTL хранящихся данных. Пример сохранённых значений в базе данных:
+![alt text](https://github.com/eaxr/zresolver/blob/master/images/resolver23.png?raw=true)
+
+Пример запуска программы и создания запросов через nslookup. После запуска программа ожидает udp запросы и начинает их обрабатывать:
+![alt text](https://github.com/eaxr/zresolver/blob/master/images/resolver30.png?raw=true)
+
 Если на машине, где установлен пакет, задать адрес доступный для других машин и указать открытый dns порт, а на другом машине указать адрес машины с запущенной программой, то возможно обрабатывать dns сообщения. Демонстрация:
-![alt text](https://github.com/eaxr/zresolver/blob/master/zResolver_1.gif?raw=true)
+![alt text](https://github.com/eaxr/zresolver/blob/master/images/zResolver_1.gif?raw=true)
